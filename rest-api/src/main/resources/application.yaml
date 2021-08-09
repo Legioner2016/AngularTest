@@ -1,0 +1,11 @@
+server: 
+  port: 8082
+  servlet: 
+    context-path: /resource-server-jwt
+
+spring:
+  r2dbc:
+    name: sa
+    password: password
+    url: r2dbc:h2:mem:///testdb
+    

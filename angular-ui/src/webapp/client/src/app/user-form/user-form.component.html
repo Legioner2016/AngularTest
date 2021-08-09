@@ -1,0 +1,50 @@
+<div class="card my-5">
+    <div class="card-body">
+      <form (ngSubmit)="onSubmit()" #userForm="ngForm">
+        <div class="form-group">
+          <label for="login" i18n="@@user.new.login">Login</label>
+          <input type="text" [(ngModel)]="user.login" 
+            class="form-control" 
+            id="login" 
+            name="login" 
+            placeholder="Enter user login"
+            size="200"
+            required #login="ngModel">
+        </div>
+        <div [hidden]="!login.pristine" class="alert alert-danger" i18n="@@user.new.login.required">login is required</div>
+        <div class="form-group">
+          <label for="password" i18n="@@user.new.password">Password</label>
+          <input type="password" [(ngModel)]="user.password" 
+            class="form-control" 
+            id="password" 
+            name="password" 
+            placeholder="Enter user password"
+            i18n-placeholder
+            required #password="ngModel">
+          <div [hidden]="!password.pristine" class="alert alert-danger" i18n="@@user.new.password.required">Password is required</div>
+        </div>
+        <div class="form-group">
+            <label for="firstname" i18n="@@user.new.firstname">Firstname</label>
+            <input type="text" [(ngModel)]="user.firstname" 
+              class="form-control" 
+              id="firstname" 
+              name="firstname" 
+              placeholder="Enter user firstname" 
+              i18n-placeholder
+              size="200">
+        </div>
+        <div class="form-group">
+            <label for="lastname" i18n="@@user.new.lastname">Last name</label>
+            <input type="text" [(ngModel)]="user.lastname" 
+              class="form-control" 
+              id="lastname" 
+              name="lastname" 
+              placeholder="Enter user last name" 
+              i18n-placeholder
+              size="200">
+        </div>
+        <button type="submit" [disabled]="!userForm.form.valid" 
+          class="btn btn-info" i18n="@@user.new.submit">Submit</button>
+      </form>
+    </div>
+  </div>

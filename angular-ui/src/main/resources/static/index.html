@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script type="text/javascript">
+		let language;
+		if (window.navigator.languages) {
+		    language = window.navigator.languages[0];
+		} else {
+		    language = window.navigator.userLanguage || window.navigator.language;
+		}
+		let toRu = false;
+		if (language == null || language.indexOf("en") == -1) {
+			toRu = true; //default
+		}
+		window.location.href = toRu ? './ru/ru/index.html' : './en/en/index.html';
+</script>
+
+</head>
+<body>
+Main application
+<a href='./en/en/index.html'>En</a>
+<a href='./ru/ru/index.html'>Ru</a>
+</body>
+</html>
